@@ -297,6 +297,8 @@ font-family: "Roboto Serif" sans-serif;
     box-shadow: 0 12px 30px 0px #c894468f;
 }
 
+
+
 .single-service-item button:hover  {
     background: #ffffff;
     color: #c89446; 
@@ -357,6 +359,22 @@ font-family: "Roboto Serif" sans-serif;
     display: block;
 }
 
+@media (max-width: 800px) {
+    .single-new-cars-item .row{
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .single-new-cars-item .col-md-5,
+    .single-new-cars-item .col-md-7 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; 
+    }
+}
 /*.new-cars-txt*/
 
 /*.owl-dots */
