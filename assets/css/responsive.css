@@ -56,7 +56,7 @@
 }/*max-width:660px*/
 
 @media screen and (max-width: 640px){
-	.single-testimonial-box {max-width: 350px;margin: 0 auto;}
+	.single-testimonial-box {margin: 0 auto;}
 }/*max-width:640px*/
 
 @media screen and (max-width: 580px){
