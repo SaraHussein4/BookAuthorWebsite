@@ -746,7 +746,7 @@ display: none;
 
 
   .modal-dialog {
-    max-height: 80vh; /* Adjust height as needed */
+    max-height: 80vh; 
     display: flex;
     flex-direction: column;
 }
@@ -758,7 +758,7 @@ display: none;
 
 .modal-body {
     overflow-y: auto;
-    max-height: 60vh; /* Adjust this value to fit within modal */
+    max-height: 60vh; 
 }
 .welcome-btn{
     font-size: 24px;
@@ -766,3 +766,14 @@ display: none;
 }
 
 
+
+.owl-carousel .owl-item img {
+    display: block;
+    width: 45%;
+    -webkit-transform-style: preserve-3d;
+    height: 423px;
+}
+
+
+
+  

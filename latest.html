@@ -49,21 +49,15 @@
         <!--responsive.css-->
         <link rel="stylesheet" href="assets/css/responsive.css">
         
+		
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-        <style>.single-testimonial-box{
-        margin: 20px 0;
-        }
-        .testimonial-img img{
-            width: 150px;
-            height: 150px;
-        }
-       
-        </style>
 
     </head>
 	
 	<body>
+	
+	
 		<!--welcome-hero start -->
 		<section id="home" class="welcome-hero">
 
@@ -90,9 +84,9 @@
 				                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 				                    <li ><a href="index.html">home</a></li>
 				                    <li ><a href="author.html">authors</a></li>
-				                    <li><a href="Books.html">books</a></li>
-				                    <li ><a href="latest.html">Latest Books</a></li>
-				                   
+				                    <li ><a href="Books.html">books</a></li>
+				                    <li class="scroll active"><a href="#new-cars">Latest Books</a></li>
+				                    
 				                </ul><!--/.nav -->
 				            </div><!-- /.navbar-collapse -->
 				        </div><!--/.container-->
@@ -116,7 +110,7 @@
 
 						</div>
 						<div class="col-lg-6">
-							<img src="./assets/images/brand/aut-removebg-preview.png" alt="">
+							<img src="./assets/images/brand/back.png" alt="">
 						</div>
 
 					</div>
@@ -136,39 +130,52 @@
 		<!--welcome-hero end -->
 
 
-        <section id="clients-say"  class="clients-say">
+        <section id="featured-books" class="py-5 my-5">
 			<div class="container">
-				<div class="section-header">
-					<h2>Authors</h2>
-				</div><!--/.section-header-->
-				<div class="row owl">
-					<!-- <div class="owl-carousel owl-carousel1 testimonial-carousel">
-						
-				
-					</div> -->
-				</div><!--/.row-->
-			</div><!--/.container-->
+				<div class="row" >
+					<div class="col-md-12" >
+	
+						<div class="section-header align-center">
+							<div class="title">
+								<span>Latest items</span>
+							</div>
+							<h2 class="section-title">Featured Books</h2>
+						</div>
+	
+						<div class="product-list" data-aos="fade-up">
+							<div class="row" id="featured-container">
+	
+								
+	
+							</div><!--ft-books-slider-->
+						</div><!--grid-->
+	
+	
+					</div><!--inner-content-->
+				</div>
+			</div>
 
-		</section><!--/.clients-say-->	
+
+		</section>
 
 
-
-    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-          <div class="modal-content">
-              <div class="modal-header">
-                 
-              </div>
-              <div class="modal-body">
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
                
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-default form-control" data-dismiss="modal">Close</button>
-              </div>
-          </div>
-      </div>
-  </div>
-  
+            </div>
+            <div class="modal-body">
+             
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default form-control" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
     
 
@@ -290,8 +297,10 @@
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <!--Custom JS-->
         <script src="assets/js/custom.js"></script>
-		<script src="./assets/js/scriptauthor.js"></script>
+		<script src="./assets/js/latestscript.js"></script>
     </body>
 </html>

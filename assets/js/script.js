@@ -1,21 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
     const booksUrl = "https://localhost:7004/api/Book";
     const authorsUrl = "https://localhost:7004/api/Author";
+    const latestBookUrl ="https://localhost:7004/api/Book/GetLatestBooks";
     
 
     Promise.all([
         fetch(booksUrl).then(response => response.json()),
-        fetch(authorsUrl).then(response => response.json())
+        fetch(authorsUrl).then(response => response.json()),
+        fetch(latestBookUrl).then(response=>response.json())
     ])
-    .then(([books, authors]) => {
+    .then(([books, authors ,latestBooks]) => {
         const container = document.getElementById("featured-container");
         const Authorcontainer = document.querySelector(".testimonial-carousel");
-        const modalContent = document.querySelector('modal-header');
-        const modalBody = document.querySelector('modal-body');
+        const LatestBookContainer = document.querySelector(".latestBooks");
+        
 
 
         container.innerHTML = ""; 
         Authorcontainer.innerHTML="";
+        LatestBookContainer.innerHTML="";
 
         if (!books || books.length === 0) {
             container.innerHTML = "<p>No books found.</p>";
@@ -80,6 +83,63 @@ document.addEventListener("DOMContentLoaded", function () {
                 Authorcontainer.insertAdjacentHTML('beforeend', AuthorHtml);
         });
       
+        latestBooks.slice(0,3).forEach(book=>{
+            const title = book.title || "No title available";
+            const image = book.imageBook || "https://via.placeholder.com/150";
+            const description = book.description || "No Description";
+            const LatestBookHTML =`
+            <div class="new-cars-item">
+								<div class="single-new-cars-item">
+									<div class="row">
+										<div class="col-md-7 col-sm-12">
+											<div class="new-cars-img">
+												<img src="${image}" alt="img" height="300px" />
+											</div>
+										</div>
+										<div class="col-md-5 col-sm-12">
+											<div class="new-cars-txt">
+												<h2><a href="#">${title}</a></h2>
+												<p>
+													This book provides expert financial strategies to help individuals manage and eliminate medical debt, ensuring financial freedom and security.
+												</p>
+												<p class="new-cars-para2">
+													Written by industry professionals, it offers real-life case studies, step-by-step guides, and actionable insights to take control of healthcare expenses.
+												</p>
+												<button class="welcome-btn new-cars-btn" onclick="window.location.href='#'">
+													View Details
+												</button>
+											</div><!--/.new-cars-txt-->	
+										</div><!--/.col-->
+									</div><!--/.row-->
+								</div><!--/.single-new-cars-item-->
+							</div>
+            `
+
+            const LatestBookContainer = document.querySelector('#new-cars-carousel');
+
+            if ($(LatestBookContainer).data('owl.carousel')) {
+                $(LatestBookContainer).owlCarousel('destroy');
+}
+            LatestBookContainer.innerHTML += LatestBookHTML;
+
+            $(LatestBookContainer).owlCarousel({
+                loop: true,
+                nav: true,
+                dots: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 1
+                    }
+                }
+            });
+
+        });
 
   $('#myModal').on('show.bs.modal', function (event) {
     const button = $(event.relatedTarget); 
