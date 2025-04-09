@@ -86,7 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latestBooks.slice(0,3).forEach(book=>{
             const title = book.title || "No title available";
             const image = book.imageBook || "https://via.placeholder.com/150";
-            const description = book.description || "No Description";
+            const description = book.description.split(".")[0] + "." || "No Description";
+            const description2 = book.description.split(".")[1] + "." || "No Description";
             const LatestBookHTML =`
             <div class="new-cars-item">
 								<div class="single-new-cars-item">
@@ -100,11 +101,11 @@ document.addEventListener("DOMContentLoaded", function () {
 											<div class="new-cars-txt">
 												<h2><a href="#">${title}</a></h2>
 												<p>
-													This book provides expert financial strategies to help individuals manage and eliminate medical debt, ensuring financial freedom and security.
-												</p>
+                                                            ${description}												
+                                                </p>
 												<p class="new-cars-para2">
-													Written by industry professionals, it offers real-life case studies, step-by-step guides, and actionable insights to take control of healthcare expenses.
-												</p>
+                                                    ${description2}												
+                                                </p>
 												<button class="welcome-btn new-cars-btn" onclick="window.location.href='#'">
 													View Details
 												</button>

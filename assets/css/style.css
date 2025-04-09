@@ -769,11 +769,23 @@ display: none;
 
 .owl-carousel .owl-item img {
     display: block;
-    width: 45%;
+    width: 50%;
     -webkit-transform-style: preserve-3d;
     height: 423px;
+    transform:skew(7deg, 1deg);
+    
 }
 
 
 
-  
+ @media (max-width: 767px) {
+   
+.owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform:skew(0deg, 0deg);
+    
+}
+ 
+ } 
